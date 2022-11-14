@@ -1,0 +1,3 @@
+[submodule "themes/sigmund"]
+	path = themes/sigmund
+	url = git@github.com:videah/sigmund.git

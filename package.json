@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "concurrently": "^7.3.0",
+    "tailwind-children": "^0.5.0",
+    "tailwind-container-break-out": "^2.0.6",
+    "tailwindcss": "^3.1.8",
+    "tailwindcss-animate": "^1.0.5"
+  },
+  "scripts": {
+    "construct": "NODE_ENV=production npx tailwindcss -i themes/sigmund/styles/styles.css",
+    "build": "NODE_ENV=production npx tailwindcss -i themes/sigmund/styles/styles.css -o themes/sigmund/static/styles/styles.css; zola build",
+    "watch": "concurrently \"npx tailwindcss -i themes/sigmund/styles/styles.css -o themes/sigmund/static/styles/styles.css --watch\" \"zola serve -i 0.0.0.0 -u macbook\""
+  },
+  "name": "videah-blog",
+  "version": "1.0.0",
+  "description": "seemed like a good idea at the time",
+  "repository": "https://github.com/videah/blog",
+  "author": "videah <videah@selfish.systems>",
+  "license": "MIT"
+}

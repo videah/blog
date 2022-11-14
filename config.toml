@@ -1,0 +1,29 @@
+title = "videah's blog"
+description = "seemed like a good idea at the time"
+
+# The URL the site will be built for
+base_url = "https://blog.videah.net"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+# Generates info for RSS readers
+generate_feed = true
+feed_filename = "rss.xml"
+
+theme = "sigmund"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+author = "videah"
+github_account = "videah"
+twitter_account = "videah_"
+goatcounter_domain = "stats.videah.net"
