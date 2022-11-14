@@ -39,7 +39,7 @@ worry about him 🤔-ing the more serious posts.
 {% end %}
 
 {% sonainvisible() %}
-You can't see him, unfortunately (try looking at this page on a larger screen) but I hope you like my little 
+You can't see him unfortunately (try looking at this page on a larger screen) but I hope you like my little 
 [rantsona](https://knowyourmeme.com/memes/rantsona) in the sidebar! He took the longest to get working out of 
 everything if you can believe it. I can disable him on a per-article basis, you don't have to worry about him 🤔-ing 
 the more serious posts.
