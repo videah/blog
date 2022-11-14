@@ -4,6 +4,9 @@ ARG CADDY_VERSION=2.6.1
 FROM node:lts-alpine3.16 as constructer
 WORKDIR app
 COPY . .
+
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
+
 RUN yarn install
 RUN yarn construct
 
