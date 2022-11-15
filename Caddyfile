@@ -13,6 +13,7 @@ header Cache-Control "max-age=31536000"
 # We serve the site's files straight from memory using caddy-embed.
 # https://github.com/mholt/caddy-embed
 file_server {
+    precompressed br gzip
     fs embedded
 }
 

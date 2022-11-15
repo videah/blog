@@ -7,6 +7,7 @@ COPY . .
 
 RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
 
+# Installs Tailwind and any dependencies/plugins and compiles the blog's CSS
 RUN yarn install
 RUN yarn construct
 
@@ -28,18 +29,28 @@ COPY --from=builder /app/public public
 # Minify the sites content
 RUN minify -r -a -s -o minified public
 
+FROM alpine:3.16 AS compressor
+WORKDIR app
+COPY --from=minifier /app/minified minified
+
+RUN apk add --no-cache brotli gzip
+
+# Precompress site content for faster delivery
+RUN find ./minified -type f -size +1400c \
+    -regex ".*\.\(css\|html\|js\|json\|svg\|xml\)$" \
+    -exec brotli --best {} \+ \
+    -exec gzip --best -k {} \+
+
 FROM caddy:${CADDY_VERSION}-builder AS embedder
 RUN git clone https://github.com/mholt/caddy-embed.git && cd caddy-embed && git checkout 6bbec9d
 WORKDIR caddy-embed
-COPY --from=minifier /app/minified files
-COPY 404.html files
+COPY --from=compressor /app/minified files
 
 # Build a custom caddy binary with the site's files embedded.
 # This is so we can serve the site straight from memory.
 RUN xcaddy build \
     --with github.com/mholt/caddy-embed=. \
     --with github.com/caddyserver/cache-handler
-
 
 FROM caddy:${CADDY_VERSION}-alpine AS runtime
 WORKDIR app
