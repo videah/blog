@@ -36,7 +36,10 @@ COPY 404.html files
 
 # Build a custom caddy binary with the site's files embedded.
 # This is so we can serve the site straight from memory.
-RUN xcaddy build --with github.com/mholt/caddy-embed=.
+RUN xcaddy build \
+    --with github.com/mholt/caddy-embed=. \
+    --with github.com/caddyserver/cache-handler
+
 
 FROM caddy:${CADDY_VERSION}-alpine AS runtime
 WORKDIR app
