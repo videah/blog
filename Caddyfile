@@ -1,6 +1,7 @@
 {
     order cache before rewrite
     cache # Enables the cache for all requests for 2 minutes by default and stores in the badger provider
+    header Cache-Control "max-age=31536000"
 }
 
 :80
