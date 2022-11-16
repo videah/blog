@@ -26,4 +26,5 @@ highlight_code = true
 author = "videah"
 github_account = "videah"
 twitter_account = "videah_"
+mastodon_url = "https://meow.social/@videah"
 goatcounter_domain = "stats.videah.net"
