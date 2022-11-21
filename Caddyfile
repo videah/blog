@@ -8,7 +8,14 @@
 :80
 
 # Cache static assets for 1 year
-header Cache-Control "max-age=31536000"
+@static {
+    file
+    path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff
+}
+
+handle @static {
+    header Cache-Control "max-age=31536000"
+}
 
 # We serve the site's files straight from memory using caddy-embed.
 # https://github.com/mholt/caddy-embed
