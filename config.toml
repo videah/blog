@@ -7,6 +7,9 @@ base_url = "https://blog.videah.net"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# When set to "true", the HTML output files will be minified
+minify_html = true
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
