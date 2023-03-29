@@ -11,6 +11,7 @@ image_ratio = 3
 enable_comments = true
 unlisted = false
 nsfw = false
+show_image_on_index = true
 +++
 
 Since things are uh... [collapsing](https://www.theguardian.com/technology/2022/nov/12/elon-musk-twitter-chaos-enleashed)?
