@@ -23,19 +23,15 @@ RUN find ./public -type f -size +1400c \
     -exec brotli --best {} \+ \
     -exec gzip --best -k {} \+
 
-FROM alpine:3.16 AS optimizer
-# TODO: Replace this when oxipng gets dockerized (https://github.com/shssoichiro/oxipng/pull/462)
-WORKDIR app
+FROM videah/oxipng:latest AS optimizer
+WORKDIR /app
 COPY --from=compressor /app/public public
-RUN apk add --no-cache tar
-RUN wget https://github.com/shssoichiro/oxipng/releases/download/v6.0.1/oxipng-6.0.1-x86_64-unknown-linux-musl.tar.gz
-RUN tar -xzf oxipng-6.0.1-x86_64-unknown-linux-musl.tar.gz && mv oxipng-6.0.1-x86_64-unknown-linux-musl/oxipng .
 
 # Remove unnecessary screenshot
 RUN rm public/images/screenshot.png
 
 # find all PNGs and optimize them
-RUN find ./public -type f -name "*.png" -exec ./oxipng --opt 3 --interlace 0 --strip safe {} \+
+RUN find ./public -type f -name "*.png" -exec oxipng --opt 3 --interlace 0 --strip safe {} \+
 
 FROM caddy:${CADDY_VERSION}-builder AS embedder
 RUN git clone https://github.com/mholt/caddy-embed.git && cd caddy-embed && git checkout 6bbec9d
