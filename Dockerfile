@@ -1,5 +1,5 @@
 # Version of caddy to be used for hosting
-ARG CADDY_VERSION=2.6.1
+ARG CADDY_VERSION=2.7.4
 
 FROM node:lts-alpine3.16 as builder
 WORKDIR app
