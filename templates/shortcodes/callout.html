@@ -1,0 +1,13 @@
+<div class="callout border-2 content-center p-2 md:p-4 rounded-md flex justify-center items-center">
+    {% if side and type and side == "left" %}
+        {% include "partials/shoutout-mascot.html" %}
+    {% endif %}
+    <div class="flex-grow flex flex-col justify-center">
+        <div class="inline-block ml-2 mr-2">
+            {{ body | markdown | safe }}
+        </div>
+    </div>
+    {% if side and type and side == "right" %}
+        {% include "partials/shoutout-mascot.html" %}
+    {% endif %}
+</div>
