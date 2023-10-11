@@ -5,7 +5,7 @@
 # Cache static assets for 1 year
 @static {
     file
-    path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff
+    path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
 }
 
 handle @static {
