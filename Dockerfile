@@ -1,9 +1,13 @@
 # Version of caddy to be used for hosting
 ARG CADDY_VERSION=2.7.4
 
-FROM node:lts-alpine3.16 as builder
+FROM node:lts-alpine3.19 as builder
 WORKDIR app
-RUN apk add --no-cache --virtual .build-deps alpine-sdk python3 zola
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python3 rust cargo git gcc cmake
+RUN git clone https://github.com/videah/zola-jxl.git
+RUN cargo install --path zola-jxl
+RUN mv $HOME/.cargo/bin/zola /bin/zola
+RUN rm -rf zola-jxl
 
 COPY . .
 

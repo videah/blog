@@ -82,7 +82,7 @@ It turns out it's a little harder for the Libra, I had to spend a ridiculous amo
 I packaged all the work I done up nicely in an [install script](https://github.com/videah/kobo-tailscale) so it should be dead easy to get this working on your Libra 2 as well.
 {% end %}
 
-Tailscale has a built in [AirDrop-esque file transfer feature](https://tailscale.com/kb/1106/taildrop) that I find really useful for quickly sending PDF's to my e-reader that I don't necessarily want to be a permanent part of my library.
+Tailscale has a built in [AirDrop-esque file transfer feature](https://tailscale.com/kb/1106/taildrop) that I find really useful for quickly sending PDFs to my e-reader that I don't necessarily want to be a permanent part of my library.
 
 {% figure(src="images/taildrop.png") %}
     Sending a PDF remotely with one click with TailDrop.

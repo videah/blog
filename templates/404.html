@@ -10,7 +10,7 @@
             path: function(p) { return location.host + p }
         }
     </script>
-    <script data-goatcounter="https://stats.videah.net/count" async src="//stats.videah.net/count.js"></script>
+    <script async src="https://{{ config.extra.umami_domain }}/script.js" data-domains="{{ config.extra.umami_track_domain }}" data-website-id="{{ config.extra.umami_id }}"></script>
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
