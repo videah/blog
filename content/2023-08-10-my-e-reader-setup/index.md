@@ -26,7 +26,7 @@ I picked it up in white to try and make an important psychological distiction. I
 
 It's got a 7-inch screen which is a little shy of the perfect [Tankōbon volume](https://en.wikipedia.org/wiki/Tank%C5%8Dbon) size, but close enough that manga is comfortable to read. I remember reading somewhere that the screen has one of the best contrast ratios in an e-reader and it is indeed very good.
 
-{% figure(src="images/uzumaki.jpeg") %}
+{% figure(src="images/uzumaki.jpg") %}
     The lineart of Junji Ito's Uzumaki looks very crisp on this display.
 {% end %}
 
