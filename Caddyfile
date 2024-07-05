@@ -1,22 +1,24 @@
+{
+    auto_https off
+}
+
 # This Caddyfile describes a server that's intended to be served behind a Caddy reverse proxy.
 # Thus there's no need to pull certificates so we simply serve on and respond to all requests on port 80.
-:80
+:80 {
+    # Cache static assets for 1 year
+    @static {
+        file
+        path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
+    }
 
-# Cache static assets for 1 year
-@static {
-    file
-    path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
-}
+    handle @static {
+        header Cache-Control "max-age=31536000"
+    }
 
-handle @static {
-    header Cache-Control "max-age=31536000"
-}
-
-# We serve the site's files straight from memory using caddy-embed.
-# https://github.com/mholt/caddy-embed
-file_server {
-    precompressed br gzip
-    fs embedded
+    root * /usr/share/caddy
+    file_server {
+        precompressed zstd br gzip
+    }
 }
 
 handle_errors {
@@ -24,7 +26,5 @@ handle_errors {
         expression {http.error.status_code} == 404
     }
     rewrite @404 /404.html
-    file_server {
-        fs embedded
-    }
+    file_server
 }
