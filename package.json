@@ -18,7 +18,7 @@
   },
   "scripts": {
     "watch": "npm-run-all --parallel tailwind:serve zola:serve",
-    "build": "tsc && cross-env DEV=false npm-run-all tailwind:build zola:build",
+    "build": "cross-env DEV=false npm-run-all tailwind:build zola:build",
     "deploy": "docker build . --tag videah/blog:latest && docker push videah/blog:latest",
     "zola:serve": "zola serve -i 0.0.0.0 -u localhost",
     "tailwind:serve": "tailwindcss -i themes/sigmund/styles/styles.css -o themes/sigmund/static/styles/styles.css --watch",
