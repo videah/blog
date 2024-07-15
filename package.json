@@ -14,19 +14,15 @@
     "tailwind-container-break-out": "^2.0.6",
     "tailwindcss": "^3.1.8",
     "tailwindcss-animate": "^1.0.5",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.0",
     "zola-bin": "^0.3.5"
   },
   "scripts": {
-    "watch": "npm-run-all --parallel tailwind:serve vite:serve zola:serve",
-    "build": "tsc && cross-env DEV=false npm-run-all tailwind:build zola:build vite:build",
+    "watch": "npm-run-all --parallel tailwind:serve zola:serve",
+    "build": "tsc && cross-env DEV=false npm-run-all tailwind:build zola:build",
     "deploy": "docker build . --tag videah/blog:latest && docker push videah/blog:latest",
     "zola:serve": "zola serve -i 0.0.0.0 -u localhost",
-    "vite:serve": "vite",
     "tailwind:serve": "tailwindcss -i themes/sigmund/styles/styles.css -o themes/sigmund/static/styles/styles.css --watch",
     "zola:build": "zola build",
-    "vite:build": "vite build",
     "tailwind:build": "tailwindcss -i themes/sigmund/styles/styles.css -o themes/sigmund/static/styles/styles.css"
   },
   "name": "videah-blog",
