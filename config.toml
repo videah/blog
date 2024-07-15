@@ -1,5 +1,6 @@
 title = "videah's blog"
 description = "seemed like a good idea at the time"
+author = "videah"
 
 # The URL the site will be built for
 base_url = "https://blog.videah.net"
