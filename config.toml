@@ -16,7 +16,6 @@ build_search_index = true
 
 # Generates info for RSS readers
 generate_feed = true
-feed_filename = "rss.xml"
 
 theme = "sigmund"
 
