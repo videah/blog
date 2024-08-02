@@ -3,8 +3,6 @@ title = "My E-Reader Setup"
 description = "A bundle of notes on the over-engineered way I read books now."
 
 [extra]
-embed_card_image = "/images/cards/e-reader.png"
-image = "/images/banners/e-reader.png"
 image_alt = "A Kobo Libra 2 e-reader sitting on some grass with my fursona on the screen saying 'Howdy!'"
 image_ratio = 3
 show_image_on_index = true
