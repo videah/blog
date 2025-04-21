@@ -3,7 +3,7 @@ ARG CADDY_VERSION=2.7.4
 
 FROM node:lts-bookworm as builder
 WORKDIR app
-COPY --from=videah/zola:latest /bin/zola /bin/zola
+COPY --from=ghcr.io/getzola/zola:v0.20.0 /bin/zola /bin/zola
 
 # Install Tailwind and any dependencies/plugins
 COPY package.json .
