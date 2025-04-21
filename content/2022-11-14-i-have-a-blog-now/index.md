@@ -3,13 +3,15 @@ title = "Howdy, Is This Thing On?"
 description = "Since things are uh... collapsing? I thought it'd be a good idea to finally get my blog up and running."
 
 [extra]
-image_label = "Some art from [@mollowmollow](https://twitter.com/mollowmollow)"
-image_alt = "my fursona panicking in front of a laptop surrounded by fire with text saying 'oh no' above"
-image_ratio = 3
+has_card = true
+has_banner = true
+banner_label = "Some art from [@mollowmollow](https://twitter.com/mollowmollow)"
+banner_alt = "my fursona panicking in front of a laptop surrounded by fire with text saying 'oh no' above"
+banner_ratio = 3
 enable_comments = true
 unlisted = false
 nsfw = false
-show_image_on_index = true
+show_banner_on_index = true
 +++
 
 Since things are uh... [collapsing](https://www.theguardian.com/technology/2022/nov/12/elon-musk-twitter-chaos-enleashed)?

@@ -3,9 +3,9 @@ title = "My E-Reader Setup"
 description = "A bundle of notes on the over-engineered way I read books now."
 
 [extra]
-image_alt = "A Kobo Libra 2 e-reader sitting on some grass with my fursona on the screen saying 'Howdy!'"
-image_ratio = 3
-show_image_on_index = true
+banner_alt = "A Kobo Libra 2 e-reader sitting on some grass with my fursona on the screen saying 'Howdy!'"
+banner_ratio = 3
+show_banner_on_index = true
 enable_comments = true
 +++
 
