@@ -1,13 +1,35 @@
-<div class="callout border-2 content-center p-2 md:p-4 rounded-md flex justify-center items-center">
-    {% if side and type and side == "left" %}
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-2">
+    {% if side == "left" %}
+    <div class="hidden sm:block">
         {% include "partials/shoutout-mascot.html" %}
+    </div>
     {% endif %}
-    <div class="flex-grow flex flex-col justify-center">
-        <div class="inline-block ml-2 mr-2">
+
+    <!-- Speech box -->
+    <div class="relative callout border-2 content-center p-2 md:p-4 rounded-md max-w-prose w-full">
+        <!-- Triangle for desktop -->
+        {% if side == "left" %}
+        <div class="hidden sm:block absolute -left-3 top-4 w-0 h-0 border-y-[8px] border-y-transparent border-r-[12px] border-r-inherit"></div>
+        {% elif side == "right" %}
+        <div class="hidden sm:block absolute -right-3 top-4 w-0 h-0 border-y-[8px] border-y-transparent border-l-[12px] border-l-inherit"></div>
+        {% endif %}
+
+        <!-- Triangle for mobile -->
+        <div class="block sm:hidden absolute left-1/2 -bottom-3 -translate-x-1/2 w-0 h-0 border-x-[8px] border-x-transparent border-t-[12px] border-t-inherit"></div>
+
+        <div class="inline-block mx-2">
             {{ body | markdown | safe }}
         </div>
     </div>
-    {% if side and type and side == "right" %}
+
+    {% if side == "right" %}
+    <div class="hidden sm:block">
         {% include "partials/shoutout-mascot.html" %}
+    </div>
     {% endif %}
+
+    {# Mobile mascot centered below #}
+    <div class="block sm:hidden mt-2">
+        {% include "partials/shoutout-mascot.html" %}
+    </div>
 </div>
