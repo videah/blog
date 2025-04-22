@@ -1,9 +1,9 @@
 +++
 title = "Attacking My Landlord's Boiler"
-description = "A bundle of notes on the over-engineered way I read books now."
+description = "How it took several months for me to get warm..."
 
 [extra]
-banner_alt = "A Kobo Libra 2 e-reader sitting on some grass with my fursona on the screen saying 'Howdy!'"
+banner_alt = "Very bright red photo of a Macbook plugged into a HackRF radio, with my thermostat sitting next to it"
 banner_ratio = 3
 show_banner_on_index = true
 enable_comments = true
