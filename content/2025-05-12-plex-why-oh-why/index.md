@@ -25,4 +25,4 @@ So... you're telling me Plex isn't meant to be almost unusably slow this whole t
 It doesn't help that the remote-access configuration UI has been very buggy for 6+ years, making it
 impossible to tell if the issue is with your server or the broken interface.
 
-So please don't make the same mistakes as me. Make sure your Plex client is actually connecting to your server directly, and use a [Port Forward Checker](https://www.yougetsignal.com/tools/open-ports.)
+So please don't make the same mistakes as me. Make sure your Plex client is actually connecting to your server directly, and use a [Port Forward Checker](https://www.yougetsignal.com/tools/open-ports).
